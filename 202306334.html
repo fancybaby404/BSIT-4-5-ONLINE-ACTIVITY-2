@@ -1,0 +1,617 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Profile of Julian Charles Macato, a full-stack software developer and BSIT student.">
+  <title>Julian Charles Macato — Profile</title>
+  <style>
+    :root {
+      --ink: #171815;
+      --paper: #f2f1ec;
+      --soft: #e6e5df;
+      --muted: #6e7069;
+      --line: rgba(23, 24, 21, .16);
+      --accent: #c8f36a;
+      --accent-dark: #263309;
+      --max-width: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.55;
+    }
+
+    a { color: inherit; }
+
+    .site-header,
+    main,
+    footer {
+      width: min(calc(100% - 48px), var(--max-width));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 28px 0 22px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--ink);
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 28px;
+      height: 28px;
+      place-items: center;
+      background: var(--ink);
+      color: var(--accent);
+      font-size: .72rem;
+      letter-spacing: 0;
+    }
+
+    .top-nav {
+      display: flex;
+      gap: 24px;
+      color: var(--muted);
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .top-nav a { text-decoration: none; }
+    .top-nav a:hover,
+    .top-nav a:focus-visible { color: var(--ink); }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(260px, .65fr);
+      gap: clamp(40px, 8vw, 120px);
+      align-items: end;
+      min-height: 590px;
+      padding: 88px 0 82px;
+    }
+
+    .eyebrow,
+    .section-label,
+    .meta-label {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3,
+    p { margin-top: 0; }
+
+    h1 {
+      max-width: 780px;
+      margin-bottom: 28px;
+      font-size: clamp(3.45rem, 9vw, 7.9rem);
+      font-weight: 800;
+      letter-spacing: -.085em;
+      line-height: .86;
+      text-wrap: balance;
+    }
+
+    .hero-lede {
+      max-width: 610px;
+      margin-bottom: 32px;
+      color: #4d504a;
+      font-size: clamp(1.06rem, 1.8vw, 1.35rem);
+      line-height: 1.42;
+    }
+
+    .hero-links,
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .button-link {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 10px 16px;
+      border: 1px solid var(--ink);
+      background: var(--ink);
+      color: var(--paper);
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: transform .2s ease, background .2s ease, color .2s ease;
+    }
+
+    .button-link.secondary {
+      background: transparent;
+      color: var(--ink);
+    }
+
+    .button-link:hover,
+    .button-link:focus-visible {
+      transform: translateY(-2px);
+      background: var(--accent);
+      color: var(--accent-dark);
+    }
+
+    .hero-aside {
+      min-height: 300px;
+      padding: 26px;
+      border: 1px solid var(--ink);
+      background: var(--ink);
+      color: var(--paper);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .hero-aside .meta-label { color: var(--accent); }
+
+    .aside-number {
+      margin: 0;
+      color: var(--accent);
+      font-size: clamp(4rem, 9vw, 7.5rem);
+      font-weight: 800;
+      letter-spacing: -.1em;
+      line-height: .8;
+    }
+
+    .aside-copy {
+      max-width: 230px;
+      margin: 0;
+      color: #d5d6cf;
+      font-size: .95rem;
+    }
+
+    .section {
+      padding: 76px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: minmax(170px, .32fr) minmax(0, 1fr);
+      gap: 28px;
+      margin-bottom: 48px;
+    }
+
+    .section-heading h2 {
+      max-width: 690px;
+      margin-bottom: 0;
+      font-size: clamp(2rem, 4vw, 4rem);
+      font-weight: 700;
+      letter-spacing: -.065em;
+      line-height: .96;
+    }
+
+    .resume-list {
+      display: grid;
+      gap: 0;
+    }
+
+    .resume-item {
+      display: grid;
+      grid-template-columns: minmax(160px, .32fr) minmax(0, 1fr);
+      gap: 28px;
+      padding: 30px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .resume-item:last-child { border-bottom: 1px solid var(--line); }
+
+    .resume-meta,
+    .project-index {
+      color: var(--muted);
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .resume-content h3,
+    .project h3 {
+      margin-bottom: 4px;
+      font-size: 1.25rem;
+      letter-spacing: -.025em;
+    }
+
+    .role {
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .resume-content ul,
+    .project ul {
+      max-width: 780px;
+      margin: 0;
+      padding-left: 18px;
+      color: #4d504a;
+    }
+
+    .resume-content li,
+    .project li { padding-left: 5px; }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1px;
+      border: 1px solid var(--line);
+      background: var(--line);
+    }
+
+    .project {
+      min-height: 300px;
+      padding: 26px;
+      background: var(--paper);
+    }
+
+    .project.featured {
+      grid-column: span 2;
+      background: var(--accent);
+    }
+
+    .project-topline {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 74px;
+    }
+
+    .project h3 {
+      font-size: clamp(1.35rem, 2vw, 2rem);
+    }
+
+    .project.featured h3 { font-size: clamp(1.7rem, 3.5vw, 3.2rem); }
+
+    .project p {
+      max-width: 630px;
+      margin-bottom: 18px;
+      color: #4d504a;
+    }
+
+    .project.featured p { color: #35401b; }
+
+    .split-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 64px;
+    }
+
+    .subsection + .subsection { margin-top: 64px; }
+
+    .subsection h3 {
+      margin-bottom: 18px;
+      font-size: 1.25rem;
+      letter-spacing: -.025em;
+    }
+
+    .education-item {
+      padding: 18px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .education-item:last-child { border-bottom: 1px solid var(--line); }
+
+    .education-item strong,
+    .education-item span { display: block; }
+
+    .education-item strong { font-size: 1rem; }
+    .education-item span { color: var(--muted); font-size: .9rem; }
+
+    .skills-list {
+      display: grid;
+      gap: 18px;
+      margin: 0;
+    }
+
+    .skills-list div {
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+    }
+
+    .skills-list div:last-child { border-bottom: 1px solid var(--line); padding-bottom: 18px; }
+
+    .skills-list dt {
+      margin-bottom: 5px;
+      color: var(--muted);
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .skills-list dd { margin: 0; }
+
+    .contact-section {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(220px, .7fr);
+      gap: 40px;
+      align-items: end;
+      padding-bottom: 94px;
+    }
+
+    .contact-section h2 {
+      max-width: 700px;
+      margin-bottom: 24px;
+      font-size: clamp(2.4rem, 6vw, 6.2rem);
+      font-weight: 800;
+      letter-spacing: -.085em;
+      line-height: .88;
+    }
+
+    .contact-note {
+      margin: 0;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .contact-links { justify-content: flex-end; }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 22px 0 34px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .75rem;
+    }
+
+    footer p { margin: 0; }
+
+    @media (max-width: 760px) {
+      .site-header,
+      main,
+      footer { width: min(calc(100% - 32px), var(--max-width)); }
+
+      .site-header { padding-top: 18px; }
+      .top-nav { gap: 14px; }
+      .top-nav a:first-child { display: none; }
+
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding: 72px 0 64px;
+      }
+
+      h1 { font-size: clamp(3.2rem, 17vw, 6rem); }
+      .hero-aside { min-height: 220px; }
+
+      .section { padding: 58px 0; }
+      .section-heading,
+      .resume-item { grid-template-columns: 1fr; gap: 14px; }
+      .section-heading { margin-bottom: 32px; }
+      .resume-item { padding: 24px 0; }
+
+      .project-grid,
+      .split-grid,
+      .contact-section { grid-template-columns: 1fr; }
+
+      .project.featured { grid-column: auto; }
+      .project-topline { margin-bottom: 50px; }
+      .contact-links { justify-content: flex-start; }
+      footer { flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .button-link { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Back to profile directory">
+      <span class="brand-mark">JC</span>
+      <span>Profile / 202306334</span>
+    </a>
+    <nav class="top-nav" aria-label="Primary navigation">
+      <a href="#work">Work</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="profile-name">
+      <div>
+        <p class="eyebrow">BSIT student · full-stack developer · Cavite, Philippines</p>
+        <h1 id="profile-name"><a href="https://github.com/fancybaby404" target="_blank" rel="noopener noreferrer">Julian Charles Macato</a></h1>
+        <p class="hero-lede">I build practical web and mobile products from first requirements to deployed, working software.</p>
+        <div class="hero-links">
+          <a class="button-link" href="https://github.com/fancybaby404" target="_blank" rel="noopener noreferrer">GitHub Profile ↗</a>
+          <a class="button-link secondary" href="mailto:julianbuckham404@gmail.com">Email me</a>
+        </div>
+      </div>
+      <aside class="hero-aside" aria-label="Profile summary">
+        <div>
+          <p class="meta-label">Student number</p>
+          <p class="aside-number">334</p>
+        </div>
+        <p class="aside-copy">A developer focused on useful interfaces, reliable systems and clear product thinking.</p>
+      </aside>
+    </section>
+
+    <section class="section" id="work" aria-labelledby="work-heading">
+      <div class="section-heading">
+        <p class="section-label">01 / Work experience</p>
+        <h2 id="work-heading">Shipping software, then making sure it keeps working.</h2>
+      </div>
+      <div class="resume-list">
+        <article class="resume-item">
+          <div class="resume-meta">Mar 2024 — Present<br>Remote</div>
+          <div class="resume-content">
+            <h3>Freelance Software Developer</h3>
+            <p class="role">Self-employed · Full-stack web and product development</p>
+            <ul>
+              <li>Delivered client-facing web applications using Next.js, React, TypeScript, Supabase and Vercel, taking projects from requirements to deployment.</li>
+              <li>Built reusable ordering and management features with admin tools, Messenger hand-off, Google Sheets automation and Google Maps integration.</li>
+              <li>Worked directly with clients to define scope, review changes, explain technical decisions and keep deployed applications running.</li>
+            </ul>
+          </div>
+        </article>
+        <article class="resume-item">
+          <div class="resume-meta">Apr 2024 — Present</div>
+          <div class="resume-content">
+            <h3>Web Content and QA Support</h3>
+            <p class="role">Content maintenance · Quality assurance</p>
+            <ul>
+              <li>Maintained content for a PHP-based website receiving around 15,000 visitors each month, publishing updates, images and announcements.</li>
+              <li>Checked published pages for broken layouts, readability, accessibility and content accuracy before and after updates.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="projects" aria-labelledby="projects-heading">
+      <div class="section-heading">
+        <p class="section-label">02 / Selected projects</p>
+        <h2 id="projects-heading">Products that turn ideas into something people can use.</h2>
+      </div>
+      <div class="project-grid">
+        <article class="project featured">
+          <div class="project-topline">
+            <span class="project-index">01 / Published Android app</span>
+            <span class="project-index">May 2026</span>
+          </div>
+          <h3>Let There Be Lights</h3>
+          <p>Built and published a React Native / Expo devotional app on Google Play with 365 daily readings, date-based access, gallery browsing and settings.</p>
+          <ul>
+            <li>Prepared production builds, store assets and privacy/data-safety information.</li>
+            <li>Tested the app on physical devices before release.</li>
+          </ul>
+        </article>
+        <article class="project">
+          <div class="project-topline">
+            <span class="project-index">02 / Unity capstone</span>
+            <span class="project-index">2025 — Present</span>
+          </div>
+          <h3>Runtime</h3>
+          <p>Action-typing educational game reinforcing programming syntax mastery.</p>
+          <ul>
+            <li>Developed an offline C# / Unity game with guided lessons, challenges and progression.</li>
+            <li>Built input evaluation and reusable UI systems, using MCP-assisted tools for code navigation and debugging while reviewing changes and testing the result.</li>
+          </ul>
+        </article>
+        <article class="project">
+          <div class="project-topline">
+            <span class="project-index">03 / E-commerce platform</span>
+            <span class="project-index">2024</span>
+          </div>
+          <h3>Harina Cookies</h3>
+          <p>Built a Next.js / Supabase ordering platform with product management, an admin dashboard and automated Google Sheets order tracking.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="hackathons-heading">
+      <div class="section-heading">
+        <p class="section-label">03 / Hackathon experience</p>
+        <h2 id="hackathons-heading">Fast collaboration around meaningful problems.</h2>
+      </div>
+      <div class="resume-list">
+        <article class="resume-item">
+          <div class="resume-meta">Meralco IDOL Hackathon<br>2024</div>
+          <div class="resume-content">
+            <h3>PowerHabit</h3>
+            <p class="role">Energy costs and savings</p>
+            <p>Built a concept for tracking energy costs and savings for non-smart appliance users.</p>
+          </div>
+        </article>
+        <article class="resume-item">
+          <div class="resume-meta">DLSU HackerCup<br>2024</div>
+          <div class="resume-content">
+            <h3>Edureels</h3>
+            <p class="role">Short-form learning platform</p>
+            <p>Built an educator platform for short learning videos with flashcards.</p>
+          </div>
+        </article>
+        <article class="resume-item">
+          <div class="resume-meta">BPI D.A.T.A. Wave<br>2024</div>
+          <div class="resume-content">
+            <h3>Micrl</h3>
+            <p class="role">Machine-learning concept</p>
+            <p>Designed a machine-learning concept for MSME loan amortisation forecasting.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section split-grid" aria-label="Education and technical skills">
+      <div class="subsection">
+        <p class="section-label">04 / Education</p>
+        <div class="education-item">
+          <strong>Cavite State University — Indang</strong>
+          <span>Indang, Cavite</span>
+          <span>Bachelor of Science in Information Technology · Expected 2027</span>
+        </div>
+        <div class="education-item">
+          <strong>De La Salle University — Dasmariñas</strong>
+          <span>Dasmariñas, Cavite</span>
+          <span>Information and Communication Technology · 2016 — 2022</span>
+        </div>
+      </div>
+      <div class="subsection">
+        <p class="section-label">05 / Additional</p>
+        <dl class="skills-list">
+          <div>
+            <dt>Technical skills</dt>
+            <dd>TypeScript, JavaScript, Go, C#, Python, Java, SQL; React, Next.js, React Native, Expo, Unity, Wails; Supabase, PostgreSQL, Firebase, MongoDB, REST APIs; Git, GitHub, Vercel, Google Play Console, MCP and AI-assisted development tools.</dd>
+          </div>
+          <div>
+            <dt>Languages</dt>
+            <dd>English and Filipino</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact" aria-labelledby="contact-heading">
+      <div>
+        <p class="section-label">06 / Contact</p>
+        <h2 id="contact-heading">Let’s build something useful.</h2>
+        <p class="contact-note">Dasmariñas, Cavite, Philippines · +63 928 945 9255</p>
+      </div>
+      <div class="contact-links">
+        <a class="button-link" href="mailto:julianbuckham404@gmail.com">julianbuckham404@gmail.com</a>
+        <a class="button-link secondary" href="https://julianmacato.vercel.app" target="_blank" rel="noopener noreferrer">Portfolio ↗</a>
+        <a class="button-link secondary" href="https://github.com/fancybaby404" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Julian Charles Macato · 202306334</p>
+    <p><a href="index.html">Back to profile directory</a></p>
+  </footer>
+</body>
+</html>
